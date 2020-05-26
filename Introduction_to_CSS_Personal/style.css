@@ -1,0 +1,45 @@
+body {
+    margin: 0 auto;
+    background-color: #fffff2;
+    font-family: 'Gamja Flower', cursive;
+    text-align: center;
+}
+
+header {
+    font-family: 'Chelsea Market', cursive;
+    background-color: #e4572e;
+    text-align: center;
+}
+
+h1+h2 {
+    color: whitesmoke;
+}
+
+img {
+    float: right;
+}
+
+main {
+    margin: auto;
+    width: 50%;
+}
+
+article {
+    border: 4px solid #050401;
+    box-shadow: 3px 3px 0 0 #e4572e;
+    overflow: auto;
+    padding: 0 15px;
+    margin: 20px auto;
+    text-align: left;
+    font-size: 20px;
+}
+
+hr {
+    margin-top: 20px;
+}
+
+form p {
+    display: inline;
+    box-shadow: 3px 4px 0 0 #e4572e;
+    margin-left: 20px;
+}
