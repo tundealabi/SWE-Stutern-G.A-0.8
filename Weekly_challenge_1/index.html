@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Akintunde Alabi">
+    <meta name="description" content="A tutorial on Git Rebase">
+    <title>Git Rebase Tutorial</title>
+</head>
+<body>
+  <header>
+      <h1>Git Rebase</h1>
+  </header>
+    <main>
+        <section>
+            <header>
+                <h3>Why i like git rebase and what it does</h3>
+            </header>
+            <p>Git is all about working with divergent history. Git Rebase is designed to integrate changes from one branch into another branch. If you've worked with git merge before, you'll notice that when you start working on a feature branch and let's just say that during that period new commits were made in the master branch and those commits are relevant to the feature you are working on. To bring these changes into your feature branch, you can either use the merge option or the rebasing option.</p> 
+            <p>Now, the merge option is the simple way out but this also means that the feature branch will have a large merge commit especially if the master branch is very active and you have to pull in those commits everytime which can pollute the commit history of the feature branch as it becomes <em>over-crowded</em>. Git rebase to the rescue, and this is why i like it though it can be pretty tough to handle atimes but with care you can do powerful things with it.</p>
+            <p>So, how does git rebase helps us? When we use the rebase option, the entire feature branch is moved to begin on the tip of the master branch. Sounds confusing? don't worry we'll see a good exmaple later. So, the benefit of using rebase is that you get a much cleaner project history which then gives you perfectly linear project history.</p>
+        </section>
+        <section>
+            <header>
+                <h3>Flags/arguements that can be used with rebase</h3>
+            </header>
+            <p>One important flag you'll want to use with rebase is the -i flag(interactive mode). What this does as we'll see in our example below is that an interactive mode is opened in your text editor where you can make the changes you wan to make(more like a GUI). Other flags includes: --continue(restart the rebasing process after having resolved a mege conflict), --abort(abort the rebase option). There are more of these options and you can read all about them at this <a href="http://git-scm.com/docs/git-rebase" target="_blank">git documentation</a>.</p>
+        </section>
+        <section>
+            <header>
+                <h3>Example</h3>
+            </header>
+            <p>Let's work through an example.</p>
+            <figure>
+                <img src="images/image1.png" alt="example screenshot 1">
+                <figcaption>Image 1</figcaption>
+            </figure>
+            <figure>
+                <img src="images/image2.png" alt="example screenshot 2">
+                <figcaption>Image 2</figcaption>
+            </figure>
+            <ul>
+                <li>First we create a folder named rebase and move into it.</li>
+                <li>Initialize a git repository with git init.</li>
+                <li>Create one HTML file, add it to the repo and make the first commit.</li>
+                <li>Using (code .) my file/folder is opened in visual studio code</li>
+                <li>Make some changes and commit them.</li>
+                <li>After all the changes made, the commit history of the master branch is shown in image 2</li>
+            </ul>
+            <figure>
+                <img src="images/image3.png" alt="example screenshot 3">
+                <figcaption>Image 3</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/image4.png" alt="example screenshot 4">
+                    <figcaption>Image 4</figcaption>
+                </figure>
+            
+            <ul>
+                <li>A new branch is created off the master barnch as seen in image 3</li>
+                <li>We can see in image 4 the commit history of the feature branch after some commits were made there.</li>
+            </ul>
+            <figure>
+                <img src="images/image5.png" alt="example screenshot 5">
+                <figcaption>Image 5</figcaption>
+               
+            </figure>
+            <ul>
+                <li>Some additioanl changes were made back in the master branch while still working on the feature branch as we can see from the log in image 5.</li>
+                <li>So we will use git rebase to incorporate those changes into our feature branch and we'll see how it does it better than git merge.</li>
+            </ul>
+            <figure>
+                <img src="images/image6.png" alt="example screenshot 6">
+                <figcaption>Image 6</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/image7.png" alt="example screenshot 7">
+                    <figcaption>Image 7</figcaption>
+                </figure>
+            <ul>
+                <li>After rebasing as seen in image 5. We can now see that the feature branch has now been moved to begin at the tip of master even though that was not the point we brnched off from and there is no commit merge message too unlike git merge. This way it is easy to read as we can see the master branch history separate from that of the feature branch.</li>
+            </ul>
+            <p>Now to the final part of this example, we will see how to use the interactive mode of rebase to some interesting stuffs. So, let's assume we are done with working in the feature branch and we want to merge our changes into the master branch using rebase.</p>
+            <figure>
+                <img src="images/image8.png" alt="example screenshot 8">
+                <figcaption>Image 8</figcaption>
+            </figure>
+                  <ul>
+                      <li>When calling git rebase, you have two options for the new base: The feature’s parent branch (e.g., master), or an earlier commit in your feature. We saw an example of the first option in image 5. </li>
+                      <li>As seen in image 8, we specified the first commit made in the feature branch and an interactive mode is opened in our text editor where we make changes to the commit before we decide to merge it with the master branch.</li>
+                  </ul>
+                <figure>
+                    <a href="images/image9.png" target="_blank">
+                    <img src="images/image9.png" alt="example screenshot 9" width="500" height="500"></a>
+                    <figcaption>Image 9</figcaption>
+                </figure>
+                <ul>
+                    <li>As seen in the text editor in image 9, we can make the changes we nedd to make, alter the history anyhow we want to. For this example, we will squash the last 4 commits and change the commit message of the first one. So we will replace the first "pick" with <strong>reword</strong> and the remaining pick with <strong>squash</strong>.</li>
+                    <li>After you close the file, it comes up again because we selected "reword" so it's going to ask us for a new message, after that we close the file and it opens again for the last time with some message and then close again.</li>
+                </ul>
+                <figure>
+                    <img src="images/image10.png" alt="example screenshot 10">
+                    <figcaption>Image 10</figcaption>
+                </figure>
+                <ul>
+                    <li>
+                        Yaay!!&#128513; We just squashed a bunch of small commits into just one. You can compare the log with the one in image 4. So now we can merge into the master branch.
+                    </li>
+                </ul>
+                <p><strong>Never use rebase on public branches</strong> as it rewrites the history.</p>
+                <p>So that's it for rebasing,there is more to it that what has been shown here, you can read more about it on this <a href="http://www.atlassian.com/git/tutorials/merging-vs-rebasing" target="_blank">atlassian page</a>.</p>
+        </section>
+    </main>
+</body>
+</html>
