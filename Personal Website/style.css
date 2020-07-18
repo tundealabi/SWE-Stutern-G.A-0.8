@@ -47,8 +47,9 @@ body{
   color: black;
   padding: 0 5%;
 }
-.about-area h4, .skill-area h4, .edu-area h4{
+.about-area h2, .skill-area h2, .edu-area .container-fluid > h2{
     padding-top: 8rem;
+    color: #004d40;
 }
 .about-area .container-fluid p:nth-child(3),
 .skill-area .container-fluid p:nth-child(3) {
@@ -119,11 +120,11 @@ body{
     font-size: 1.17em;
     font-weight: 300;
 }
+
 .edu-area {
     background: #778beb;
     color: black;
     padding: 0 5%;
-    height: 100vh;
 }
 button[aria-expanded="true"]{
     background: #192a56;
