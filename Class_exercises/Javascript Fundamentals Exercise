@@ -1,0 +1,59 @@
+PART 1
+1. let name = “jake”, dayOfBirth = 25;
+2. The last variable takes precedence.(except you use const).
+3. let response = prompt("Please enter your favourite color");
+   const reply = resp => console.log(`Hi, Your favourite color is ${resp.toUpperCase()}.`);
+   reply(response);
+
+4. "Hi There! " + "It's "sunny" out"  = "Hi There! " + "It's \"sunny\" out".
+5. Undefined: refers to a declared variable with no assigned value. E.g, let name;
+    Null: This is an assignment value, i.e, you can assign it to a variable therefore making it
+    explicitly empty(blank). E.g, var name = null;
+
+6. NaN: Not a Number. The data type is number.
+
+7. Undefined.
+
+
+PART 2
+
+1. true.
+2. true.
+3. 1.
+4. true.
+5. false.
+6. true.
+7. true.
+
+
+
+
+PART 3
+A.
+1. “Keep it up”.
+2. The if statement executes a statement if a specified condition is truthy.
+
+B.
+1. “third”. This is because firstVariable and secondVariable are falsy and the if statement will only run if the 
+   specified condition is truthy. You can interpret the the if statement with the block of code of console.log(“third”) 
+   like this - - - if(false || true) and this will return true.
+2. firstVariable will have a value of undefined.
+3. The value of firstVariable is not a truthy value but rather a falsy value because it returns undefined
+4. The value of secondVariable is also not a truthy value but a falsy one because its value is an empty string.
+5. The value of thirdVariable is a truthy value because it has a defined value or was initialized with a defined value.
+
+
+PART 4
+1. (function (num=0.5){
+let value = Math.random();
+    if(value > num){
+     console.log(`Over ${num}`,value.toPrecision(2));
+ }else{
+ 	console.log(`Under ${num}`,value.toPrecision(2));
+ }
+})();
+
+2. A falsy value is a value that is considered false when encountered in a Boolean context. Falsy values include: keyword false, 0, Nan, undefined, null, -0, “” and 0n.
+
+
+
