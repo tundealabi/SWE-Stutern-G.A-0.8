@@ -1,0 +1,405 @@
+PART 1
+
+1 - 3.
+ let obj = {firstName:"Alabi",lastName:"Tunde",occupation:"Developer"};
+ obj.firstName;
+ obj.firstName;
+ obj.occupation;
+ obj["firstName"];
+ obj["lastName"];
+ obj["occupation"];
+ 
+ obj.hobby = "Sleeping";
+ delete obj.occupation;
+
+4. Dot Notation property identifiers can only be alphanumeric (including  _ and $), property identifiers can not start
+with a number, property identifiers cannot contain variables and cannot also contain property identifiers with spaces. 
+WHILE Bracket Notation has fewer limitations as it allows for the use of variables, spaces and strings that start with 
+numbers. One important thing to note while using Bracket Notation is that property identifiers have to be a string or 
+a variable that references a string.
+
+5.  
+var namesAndHobbies = {elie:"JavaScript",matt:"jogging",
+janey:"table building",tim:"sailing"};
+ 
+for(items in namesAndHobbies){
+  console.log(namesAndHobbies[items] + " => " + items)
+};
+
+
+6 - 7.
+ namesAndHobbies.name = "Tunde";
+ namesAndHobbies.hobby = "Eating";
+ 
+ if("name" in namesAndHobbies){
+ console.log(namesAndHobbies["name"],namesAndHobbies["hobby"]);
+ };
+.
+
+
+PART 2
+1 - 4
+ 
+var programming = {
+    languages: ["JavaScript", "Python", "Ruby"],
+    isChallenging: true,
+    isRewarding: true,
+    difficulty: 8,
+    jokes: "http://stackoverflow.com/questions/234075/what-is-your-best-programmer-joke"
+};
+ programming.languages.push("Go");
+ programming.difficulty = 7;
+ delete programming.jokes;
+ programming.isFun = true;
+ 
+
+5.
+    
+ for(let i = 0; i<programming.languages.length;i++){
+ console.log(programming.languages[i]);
+ };
+
+6.
+  
+ for(item in programming){
+ console.log(item);
+ };
+  
+7.
+  
+ for(item in programming){
+ console.log(programming[item]);
+ };
+
+
+
+
+PART 3
+1.
+ function myName(){
+  let name = "Tunde Alabi"
+  console.log(name);
+ };
+ myName();
+
+2. 
+ let favouriteFoods = ["pizza","ice cream"];
+ function randomFood(){
+   let length = favouriteFoods.length;
+   return favouriteFoods[Math.floor(Math.random()*length)];
+ };
+ randomFood();
+
+3. 
+ let numbers = [1,2,3,4,5,6,7,8,9,10];
+ function displayOddNumbers(){
+   for(let i = 0; i < numbers.length; i+=2){
+     console.log(numbers[i]);
+   }  
+ };
+ displayOddNumbers();
+
+4.
+ let numbers = [1,2,3,4,5,6,7,8,9,10];
+ function displayEvenNumbers(){
+   for(let i = 0; i < numbers.length; i++){
+     if(numbers[i] % 2 == 0){
+          console.log(numbers[i]);
+     }
+   }
+ }
+ displayEvenNumbers();
+
+
+5.
+ let numbers = [1,2,3,4,5,6,7,8,9,10];
+ function returnFirstOddNumber(){
+   for(let i = 0; i < numbers.length; i++){
+     if(numbers[i] % 2 != 0){
+       return numbers[i];
+     }
+   }
+ };
+ console.log(returnFirstOddNumber());
+
+6.
+ let numbers = [1,2,3,4,5,6,7,8,9,10];
+ function returnFirstEvenNumber(){
+   for(let i = 0; i < numbers.length; i++){
+      if(numbers[i] % 2 == 0){
+        console.log(numbers[i]);
+        break;
+      }
+   }
+ };
+ returnFirstEvenNumber();
+
+7. 
+ let numbers = [1,2,3,4,5,6,7,8,9,10];
+ function returnFirstHalf(){
+   let result = [];
+   for(let i = 0; i < numbers.length/2; i++){
+      result.push(numbers[i]);
+   }
+   return result;
+ };
+ console.log(returnFirstHalf());
+8.
+ let numbers = [1,2,3,4,5,6,7,8,9,10];
+ function returnSecondHalf(){
+   let result = [];
+    for(let i = numbers.length/2; i < numbers.length; i+=1){
+          result.push(numbers[i]);
+      }
+    return result;
+ };
+ console.log(returnSecondHalf());
+
+
+
+PART 4
+a.
+ let calculate = {
+   add:function(a,b){return a + b;},
+   subtract:function(m,n){return m - n;},
+   multiply:function(s,t){return s * t;},
+   divide:(num1,num2) => num1 / num2 
+ };
+ console.log(calculate.add(5,10));
+ console.log(calculate.subtract(100,50));
+ console.log(calculate.multiply(20,20));
+ console.log(calculate.divide(50,2));
+ 
+b.
+const sayHello = name => name == "Tunde" ? "Hello Boss" : `Hello ${name}`;
+
+c.
+ function average(arr){
+   let result = 0;
+    for(let i = 0; i < arr.length; i++){
+       result += arr[i]/(arr.length);
+    }
+   return result;
+ };
+ console.log(average([10,20])); //15
+
+d.
+ function createStudent(firstName,lastName){
+     return {
+       firstName:firstName,
+       lastName:lastName
+     }
+ };
+
+
+e.
+   var tim = createStudent("Tim", "Garcia");
+   var matt = createStudent("Matt", "Lane");
+   var elie = createStudent("Elie", "Schoppik");
+
+   var students = [tim, matt, elie];
+
+
+f.
+ function findStudentByFirstName(name){
+   let finalName = `${name[0].toUpperCase()}`;
+   for(let i = 1; i < name.length; i+=1){
+        finalName += name[i].toLowerCase();
+   }
+   for(let j = 0; j < students.length; j+=1){
+        if(students[j].firstName == finalName){
+           return true;
+        }
+   }
+         return false;
+ };
+ console.log(findStudentByFirstName("tIM"));
+
+g.
+ function extractEveryThird(arr){
+   let result = [];
+   for(let i = 2; i < arr.length; i+=3){
+       result.push(arr[i]);
+   }
+   return result;
+ };
+
+
+h.
+ function countEvensAndOdds(arr){
+ let result = {oddCount:0,evenCount:0};
+ for(let i = 0; i < arr.length; i+=1){
+   if(arr[i] % 2 != 0){
+      result.oddCount++;
+   }else{
+     ++result.evenCount;
+   }
+ };
+ return result;
+ };
+
+i.
+//Hello from global;
+//Hello from global;
+
+
+PART 5
+ 1.
+ (function displayFullName(firstName,lastName){
+   return firstName + " " + lastName;
+ })("Tim","Howard");
+
+ 2.
+ function createCalculator(){
+   return {
+       add:(a,b) => a + b,
+       subtract:(a,b) => a - b,
+       multiply:(a,b) => a * b,
+       divide:(f,g) => f/g 
+   }
+ };
+
+
+PART 6
+a. 
+// ”Tim”.This is because a variable was declared inside the function and that variable was returned by the function.
+b.
+// ReferenceError: firstName is not defined. This is because the firstName variable was declared in a function 
+   block(local scope) so it cannot be accessed outside the function(global scope).
+c.
+// “Undefined”. This is because variable declarations(Var) are processed before any code is executed(hoisting) as this 
+   moves the variable at the top of their respective scope.
+   So the code looks like this:
+         Var firstName;
+         console.log(firstName); //undefined
+          firstName = “Elie”;
+d.
+//  ReferenceError: firstName is not defined. This is because we are trying to access a variable that does not exist yet. 
+    There is no var keyword.
+
+e. 
+// “Hi undefined”. Hoisting at work here, var firstName = “Elie” is initially declared at the top of the function scope 
+    as undefined(var firstName;).
+
+f.
+//  ReferenceError: firstName is not defined. This is because we are trying to access a variable that does not exist yet. 
+    There is no var keyword.
+
+g. 
+// “Hi”. Hoisting at work here, function declarations are fully defined before the code is run.
+
+
+h. 
+// TypeError: sayHi is not a function. Since a function expression assigns an anonymous function to a variable(var), hoisting
+   applies to the variable name as well.
+   So we should have something like this:
+          var sayHi; // undefined
+           sayHi(); // at this point sayHi is a primitive data type(undefined) and we want to treat as a function. Hence, we 
+           get TypeError
+           var sayHi = function(){
+           return “Hi”;
+       }
+
+PART 7
+1. 
+function printDay(number) {
+  let day;
+  switch(number){
+    case 1 :
+    day = "Sunday";
+    break;
+    case 2 :
+    day = "Monday";
+    break;
+    case 3 :
+    day = "Tuesday";
+    break;
+    case 4 :
+    day = "Wednesday";
+    break;
+    case 5 :
+    day = "Thursday";
+    break;
+    case 6 :
+    day = "Friday";
+    break;
+    case 7 :
+    day = "Saturday";
+    break;
+  }
+  return day;
+};
+
+
+2.
+const lastElement = arr => arr.pop();
+
+3. 
+function numberCompare(num1,num2){
+  if(num1 > num2){
+    return "First is greater";
+  }else if(num1 < num2){
+    return "Second is greater";
+    }
+    return "Numbers are equal";
+};
+
+4.
+function singleLetterCount(word,letter){
+  word = word.toLowerCase();
+  letter = letter.toLowerCase();
+  let count = 0;
+  for(let i = 0; i < word.length; i+=1){
+    if(word[i] == letter){
+      count++;
+    }
+  }
+  return count;
+};
+
+
+5.
+function multipleLetterCount(word){
+  let result = {};
+  for(let i = 0; i < word.length; i+=1){
+     if(!(word[i] in result)){
+       result[word[i]] = 1;
+    }else{
+      result[word[i]]++;
+    }
+  }
+  return result;
+}
+
+
+6.
+const arrayManipulation = (arr,command,location,value) =>{
+   command = command.toLowerCase();
+   location = location.toLowerCase();
+   if(command == "remove" && location == "end"){
+     return arr.pop();
+   }else if(command == "remove" && location == "beginning"){
+     return arr.shift();
+   }else if(command == "add" && location == "beginning"){
+         arr.unshift(value);
+         return arr;
+   }else if(command == "add" && location == "end"){
+           arr.push(value);
+           return arr;
+   }
+   return false;
+};
+
+
+7.
+const isPalindrome = (item) =>{
+  item = item.toLowerCase().split(" ").join("");
+  let palindrome = "";
+  let i = item.length;
+  for(;i > 0;){
+    i-=1;
+     palindrome += item[i];
+  }
+  return item == palindrome ? true : false;
+};
+
