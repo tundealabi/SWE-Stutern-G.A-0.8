@@ -58,18 +58,18 @@ buttonArray.forEach(item =>{
     item.addEventListener('click',()=>{
         let userResponse;
         if(item.textContent === "Question 1"){
-            userResponse = prompt("Enter any number of your choice that is less than or equal to 1000");
+            userResponse = prompt("Enter any number of your choice that is less than or equal to 1000 and get the sum of the multiples of 3 and 5 within the entered number");
             userResponse = userResponse ? Number(userResponse) : null;
             if(userResponse <= 1000 && userResponse){
                  multiples(userResponse);
             }      
         } else if (item.textContent === "Question 2") {
-            userResponse = prompt("Enter your set of digits");
+            userResponse = prompt("Enter your set of digits and get your digits back with a dash inserted between even numbers");
             if(!isNaN(userResponse) && userResponse){
                 even(userResponse.toString());
             }
         }else{
-            userResponse = prompt("Enter your array item",'[3, "a", "a", "a", 2, 3, "a", 3, "a", 2, 4, 9, 3]');
+            userResponse = prompt("Enter an array of items and get the item that occurs the most",'[3, "a", "a", "a", 2, 3, "a", 3, "a", 2, 4, 9, 3]');
                if(userResponse){
                    mostOccur(userResponse);
                }
