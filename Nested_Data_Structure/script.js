@@ -44,8 +44,9 @@ var nestedData = {
 nestedData.innerData.addSnack("chocolate");
 console.log(nestedData.innerData.snacks);
 
-       The keyword "this" refers to where a value lives in(context) or what object it lives in
-
+       /*The keyword "this" refers to where a value lives in(context) or what object it lives in. In, this exercise the 
+       "this" returned in the addSnack method refers to the innerData object which is the object context where addSnack lives.
+       */
 
 // QUESTION 2
 
