@@ -3,7 +3,7 @@ function minCost(cost){
   let max = 100;
   let arr = [];
   let arrIndex = [];
-  if(cost.length > 100 || cost.length < 1)
+  if(cost.length > 100 || cost.length < 2)
        return "This neighbourhood can only take a max of 100 houses and a min of two houses.";
     for(let i = 0; i < cost.length; i+=1){
       for(let j =0; j < cost[i].length; j+=1){
