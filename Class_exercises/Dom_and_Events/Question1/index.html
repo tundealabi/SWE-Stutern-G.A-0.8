@@ -22,23 +22,34 @@
     <div class="footer">
     </div>
     <script>
+     //1
     let section = document.getElementsByTagName("section")[0];
+    //2
     let section2 = document.querySelector("#container");
+        //3
     let secondListItem = document.getElementsByClassName("second");
+        //4
     let thirdListItemOl = section.querySelector("ol").querySelector(".third");
-    let footer = document.querySelector(".footer");
-    
+        //5
+     section2.childNodes[sect.childNodes.length -1].textContent = "Hello";
+     let footer = document.querySelector(".footer");
+    //6
     footer.classList.add("main");
+        //7
     footer.classList.remove("main");
-
+     //8
    let fourthListItemUl = document.createElement("li");
+        //9
    fourthListItemUl.innerText = "four"
+        //10
    section.querySelector("ul").appendChild(fourthListItemUl);
+        //11
    let olListItems = section.querySelector("ol").getElementsByTagName("li");
 
    for(var li of olListItems){
      li.style["background-color"] = "green";
-  }
+  };
+        //12
    document.body.removeChild(footer);
 
     </script>
