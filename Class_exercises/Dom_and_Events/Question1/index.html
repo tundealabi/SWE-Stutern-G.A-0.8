@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+    </div>
+    <section id="container">
+        <ul>
+            <li class="first">one</li>
+            <li class="second">two</li>
+            <li class="third">three</li>
+        </ul>
+        <ol>
+            <li class="first">one</li>
+            <li class="second">two</li>
+            <li class="third">three</li>
+        </ol>
+    </section>
+    <div class="footer">
+    </div>
+    <script>
+    let section = document.getElementsByTagName("section")[0];
+    let section2 = document.querySelector("#container");
+    let secondListItem = document.getElementsByClassName("second");
+    let thirdListItemOl = section.querySelector("ol").querySelector(".third");
+    let footer = document.querySelector(".footer");
+    
+    footer.classList.add("main");
+    footer.classList.remove("main");
+
+   let fourthListItemUl = document.createElement("li");
+   fourthListItemUl.innerText = "four"
+   section.querySelector("ul").appendChild(fourthListItemUl);
+   let olListItems = section.querySelector("ol").getElementsByTagName("li");
+
+   for(var li of olListItems){
+     li.style["background-color"] = "green";
+  }
+   document.body.removeChild(footer);
+
+    </script>
+</body>
+</html>
