@@ -78,7 +78,7 @@ QUESTION 8
 function findIndex(arr,fn){
     for(let i = 0; i < arr.length; i+=1){
         if(fn(arr[i])){
-            return arr.indexOf(arr[i]);
+            return i;
         }
     }
 }
