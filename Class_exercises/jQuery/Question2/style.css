@@ -1,0 +1,13 @@
+.completed{
+    text-decoration: line-through;
+    text-decoration-color: red;
+}
+
+.delete{
+    color: red;
+    cursor: pointer;
+}
+
+li{
+    text-transform: capitalize;
+}
