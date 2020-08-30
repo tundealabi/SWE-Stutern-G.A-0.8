@@ -1,0 +1,9 @@
+.cell{
+    width:65%;
+}
+.sort-btn{
+    cursor: pointer;
+}
+tbody{
+    text-transform: capitalize;
+}
