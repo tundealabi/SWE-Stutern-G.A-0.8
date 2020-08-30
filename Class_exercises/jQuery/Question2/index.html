@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Todo App</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">TodoItem</a>
+        </nav>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 col-xs-2 col-lg-2 col-sm-2"></div>
+                <div class="col-md-8 col-xs-8 col-lg-8 col-sm-8">
+                    <h2>Todo List</h2>
+            <!-- input and add btn area -->
+            <div class="row">
+                <div class="col-md-1"></div>
+                <!-- input  -->
+                <div class="form-group col-md-9">
+                    <input type="text" placeholder="New Task" class="form-control" id="add-task">
+                </div>
+                <!-- add btn -->
+                <div class="form-group col-md-1">
+                    <button class="btn btn-primary">Add</button>
+                </div>
+            </div>
+            <!-- end of input and btn area -->
+            <!-- list items -->
+            <ul class="list-group" id="taskList">
+                <!-- <li class="list-group-item checkbox">
+                    <div class="row">
+                        <div class="col-md-1 col-xs-1 ol-lg-1 col-sm-1">
+                            <label><input type="checkbox"></label>
+                        </div> -->
+                        <!-- text for the checkbox -->
+                        <!-- <div class="col-md-10 col-xs-10 col-lg-10 col-sm-10">
+                            first item
+                        </div> -->
+                        <!-- end of text -->
+                        <!-- delete icon -->
+                        <!-- <div class="col-md-1 col-xs-1 col-lg-1 col-sm-1">
+                            <i class="fa fa-trash"></i>
+                        </div> -->
+                        <!-- end of delete icon -->
+                    <!-- </div>
+                </li> -->
+            </ul>
+            <!-- end of list items -->
+        </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script src="./script.js"></script>
+</body>
+</html>
