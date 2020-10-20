@@ -1,0 +1,16 @@
+{
+  "name": "jokes_api",
+  "version": "1.0.0",
+  "description": "a simple command line tool which allows us to make a request to dad jokes API and stores the data in a text file!",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "me",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.6",
+    "prompt": "^1.0.0",
+    "request": "^2.88.2"
+  }
+}
