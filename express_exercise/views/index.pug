@@ -1,0 +1,17 @@
+extends base.pug
+block content
+    h1 SHOPPING LIST
+    form(action="/items/new",method="POST")
+      label item:
+      input(type="text",name="item",required)
+      label price:
+      input(type="number",name="price",min=1,required)
+      button(type="submit") Add
+    ul
+      each item in data
+       li= item.item
+       ul
+        li=item.price
+        li
+            a(href=`/items/edit/${item.id}`) Edit
+            a(href=`/items/delete/${item.id}`) Delete

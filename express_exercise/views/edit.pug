@@ -1,0 +1,9 @@
+extends base.pug
+block content
+    form(
+        action=`/items/${data.id}?_method=PATCH`
+        method='POST'
+    )
+        input(type="text",name="item",value=`${data.item}`)
+        input(type="text",name="price",value=`${data.price}`)
+        button(type="submit") Edit
