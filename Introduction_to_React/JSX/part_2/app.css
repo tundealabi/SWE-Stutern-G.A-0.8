@@ -1,0 +1,15 @@
+.tweet {
+    background-color: whitesmoke;
+    border: 2px solid wheat;
+    width: 50%;
+    text-align: center;
+    margin: 20px;
+}
+
+.text {
+    color: rgb(197, 114, 114);
+}
+
+.user {
+    color: burlywood
+}
