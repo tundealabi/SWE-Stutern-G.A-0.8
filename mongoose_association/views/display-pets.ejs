@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <title>Pet App</title>
+</head>
+<body>
+    <%-include('header')%>
+    <div class="container">
+        <h1 class="text-center">List of <%=data.username%>'s Pet</h1>
+        <%if(data.pets.length){%>
+        <div class="list-group">
+            <%data.pets.forEach(user=>{%>
+                <a href="/owners/<%=data._id%>/pets/<%=user._id%>" class="list-group-item list-group-item-action bg-warning"><%=user.petname%> ---- Click me to view my profile</a>
+                <%})%>
+          </div>
+          <%}else{%>
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                  <h1 class="display-4">Hello <%=data.username%></h1>
+                  <p class="lead">Okay, You currently do not have a pet. Click the button below to add a new pet. See ya!!!</p>
+                  <a class="btn btn-primary btn-lg" href="/owners/<%=data._id%>/pets/create/new" role="button">Be a pet owner</a>
+                </div>
+              </div>
+              <%}%>
+    </div>
+    
+</body>
+</html>
