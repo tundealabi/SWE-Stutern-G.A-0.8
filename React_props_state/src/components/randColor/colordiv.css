@@ -1,0 +1,13 @@
+.color {
+    text-align: center;
+    flex-basis: 100%;
+}
+
+.myColor {
+    display: flex;
+    flex-flow: row wrap;
+}
+.myColor > div {
+    flex-basis: 25%;
+    height: 15rem;
+}

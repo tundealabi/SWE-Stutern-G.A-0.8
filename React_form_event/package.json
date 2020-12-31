@@ -1,15 +1,19 @@
 {
-  "name": "react_props_state",
+  "name": "react_form_event",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "build": "webpack --config webpack.dev.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/plugin-proposal-class-properties": "^7.12.1",
@@ -26,11 +30,5 @@
     "webpack-cli": "^4.3.0",
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^5.7.3"
-  },
-  "dependencies": {
-    "prop-types": "^15.7.2",
-    "randomcolor": "^0.6.2",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
   }
 }
