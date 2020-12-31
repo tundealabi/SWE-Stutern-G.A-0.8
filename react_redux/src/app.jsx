@@ -1,9 +1,8 @@
 import React from 'react';
 import { Link, Redirect, Route, Switch } from 'react-router-dom';
 import Home from './components/Home.jsx';
-import UserColors from './components/UserColors.jsx';
-import AddColor from './components/AddColor.jsx';
-import DisplayColor from './components/DisplayColor.jsx';
+import TodoList from './components/TodoList.jsx';
+import AddTodo from './components/AddTodo.jsx';
 import styling from './components/display.css';
 
 
@@ -16,16 +15,12 @@ function App() {
            <Route exact path="/">
                <Home />
            </Route>
-           <Route exact path="/colors">
-               <UserColors />
+           <Route exact path="/todos">
+               <TodoList />
            </Route>
-           <Route exact path="/colors/new">
-               <AddColor />
-           </Route>
-           <Route path="/colors/:color">
-               <DisplayColor />
-           </Route>
-           <Route component={()=> <Redirect to={'/colors'}/>}/>
+           <Route exact path="/todos/new/" component={props=> <AddTodo {...props} />} />
+           <Route path="/todos/new/:edit" component={props=> <AddTodo {...props}/>} />
+           <Route component={()=> <Redirect to={'/todos'}/>}/>
            </Switch>
         </div>
     )
