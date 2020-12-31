@@ -20,15 +20,9 @@ class MoodChanger {
         }
     }
     rootReducer(state=this.moodChanger(),action) {
-        switch(action.payload){
-            case "sad":
-                return this.moodChanger("sad");
-            case "happy":
-                return this.moodChanger("happy");
-            case "angry":
-                return this.moodChanger("angry");
-            case "confused":
-                return this.moodChanger("confused");
+        switch(action.type){
+            case "change_mood":
+                return this.moodChanger(action.payload);
             default:
                 return state;
         }
