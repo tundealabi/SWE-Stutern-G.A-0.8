@@ -1,5 +1,6 @@
 const express = require("express");
 const client = require("../db");
+const validate = require("../middleware/validator");
 
 const router = express.Router();
 
@@ -14,9 +15,9 @@ router
                return next(err);
            }
         })
-        .post(async (req,res,next)=>{
+        .post(validate,async (req,res,next)=>{
            try{
-                const gradsResult = await client.query("INSERT INTO graduates name VALUES ($1) RETURNING *",[req.body.name]);
+                const gradsResult = await client.query("INSERT INTO graduates (name) VALUES ($1) RETURNING *",[req.body.name]);
                 return res.status(200).json(gradsResult.rows);
            }
            catch(err){
@@ -25,7 +26,7 @@ router
         });
 router
     .route("/:id")
-        .patch(async (req,res,next)=>{
+        .patch(validate,async (req,res,next)=>{
             try {
                 const gradsResult = await client.query("UPDATE graduates SET name = ($1) WHERE id = ($2) RETURNING *",[req.body.name,req.params.id]);
                 return res.status(200).json(gradsResult.rows);
